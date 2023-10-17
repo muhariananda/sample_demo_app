@@ -17,6 +17,7 @@ class DestinationDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -33,30 +34,31 @@ class DestinationDetailPage extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 24),
             Text(
               destination.name,
               style: const TextStyle(
-                fontSize: 16,
+                fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
             Text(
               destination.price.toString(),
               style: const TextStyle(
-                fontSize: 14,
+                fontSize: 18,
               ),
             ),
             Text(
               destination.rating.toString(),
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 14,
               ),
             ),
             const SizedBox(height: 16),
             Text(
               destination.description,
               style: const TextStyle(
-                fontSize: 12,
+                fontSize: 14,
               ),
             ),
           ],

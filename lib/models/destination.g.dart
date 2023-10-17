@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'destination_cm.dart';
+part of 'destination.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class DestinationCMAdapter extends TypeAdapter<DestinationCM> {
+class DestinationAdapter extends TypeAdapter<Destination> {
   @override
   final int typeId = 0;
 
   @override
-  DestinationCM read(BinaryReader reader) {
+  Destination read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return DestinationCM(
+    return Destination(
       name: fields[0] as String,
       description: fields[1] as String,
       price: fields[2] as int,
@@ -26,7 +26,7 @@ class DestinationCMAdapter extends TypeAdapter<DestinationCM> {
   }
 
   @override
-  void write(BinaryWriter writer, DestinationCM obj) {
+  void write(BinaryWriter writer, Destination obj) {
     writer
       ..writeByte(5)
       ..writeByte(0)
@@ -47,7 +47,7 @@ class DestinationCMAdapter extends TypeAdapter<DestinationCM> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is DestinationCMAdapter &&
+      other is DestinationAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

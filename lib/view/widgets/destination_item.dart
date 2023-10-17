@@ -31,6 +31,7 @@ class DestinationItem extends StatelessWidget {
           child: Row(
             children: [
               _destinationImage(),
+              const SizedBox(width: 16),
               _destinationContent(),
             ],
           ),
@@ -71,14 +72,13 @@ class DestinationItem extends StatelessWidget {
   Widget _destinationImage() {
     return ClipRRect(
       borderRadius: BorderRadius.circular(8),
-      child: AspectRatio(
-        aspectRatio: 1 / 1,
-        child: Image.file(
-          File(
-            destination.imagePath,
-          ),
-          fit: BoxFit.cover,
+      child: Image.file(
+        File(
+          destination.imagePath,
         ),
+        fit: BoxFit.cover,
+        height: 100,
+        width: 100,
       ),
     );
   }

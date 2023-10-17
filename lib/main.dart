@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:sample_destination_app/models/destination.dart';
 import 'package:sample_destination_app/view/pages/destination_detail_page.dart';
 import 'package:sample_destination_app/view/pages/destination_insert_page.dart';
 import 'package:sample_destination_app/view/pages/destination_list_page.dart';
 
 void main() async {
+  await Hive.initFlutter();
   runApp(const MyApp());
 }
 
@@ -22,12 +24,12 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: DestinationListPage.routeName,
       routes: {
-        DestinationListPage.routeName: (_) => const DestinationListPage(),
+        DestinationListPage.routeName: (_) => DestinationListPage(),
         DestinationInsertPage.routeName: (_) => const DestinationInsertPage(),
         DestinationDetailPage.routeName: (context) {
           final args = ModalRoute.of(context)!.settings.arguments;
           return DestinationDetailPage(destination: args! as Destination);
-        }
+        },
       },
     );
   }
